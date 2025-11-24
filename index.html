@@ -51,7 +51,7 @@ Management’s Conservation Strategies</title>
       <div class="column is-four-fifths">
         <h2 class="title is-3">Introduction</h2>
           <figure class="image is-3by2" style="margin-bottom: 25px;">
-          <img src="" alt="BLM Wetlands Map">
+          <img src="blm.jpg" alt="BLM Wetlands Map">
         </figure>
         <div class="content has-text-justified">
           <p> Wetlands are essential for maintaining ecological balance by supporting biodiversity,
@@ -62,14 +62,18 @@ AIM Riparian and Wetland Indicators Hub, play a key role in sustaining ecosystem
 However, wetland condition and distribution vary greatly by geography, climate, and land
 use. Some states maintain diverse systems, while others face degradation from aridity or
 human pressures, posing challenges for equitable conservation planning.
-This study analyzes BLM-managed wetlands across the western U.S. to identify areas
-needing greater conservation focus. Fig. 2 shows large regional disparities: Nevada holds
-the most wetlands (198), followed by California (160) and Alaska (115), while Oregon has
-the fewest (6). These differences reflect climatic and geographic influences, Nevada’s
-abundance stems from arid-basin Playa wetlands, whereas Oregon’s low count indicates
-limited BLM coverage. Overall, the results highlight the uneven distribution of wetland
-resources and the need for region-specific conservation strategies to strengthen
-ecosystem resilience. </p>
+</p>
+          <figure class="image is-3by2" style="margin: 25px 0;">
+            <img src="barchart_bystate.png" alt="BLM Wetlands Map">
+          </figure>
+          <p>
+            This study analyzes BLM-managed wetlands across the western U.S. to identify areas
+            needing greater conservation focus. Large regional disparities exist: Nevada holds the
+            most wetlands, followed by California and Alaska, while Oregon has the fewest. These
+            differences reflect climatic and geographic influences and highlight the need for
+            region-specific conservation strategies to strengthen ecosystem resilience.
+          </p>
+
         </div>
       </div>
     </div>
@@ -78,19 +82,17 @@ ecosystem resilience. </p>
 
 <section class="section">
   <div class="container is-max-desktop">
-<h2 class="title is-3 has-text-centered">A Catchy Title for the First Section</h2>
+<h2 class="title is-3 has-text-centered">Methodology</h2>
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus tincidunt lectus quis libero interdum, non facilisis sapien aliquet. Sed sit amet ex hendrerit, dignissim purus sit amet, blandit est. Integer nec mauris at dolor egestas volutpat. Quisque efficitur metus vitae dolor fermentum, quis varius neque consectetur.
-      </p>
-    <figure class="image has-text-centered">
-        <img src="./static/images/Template_bar.png"
-       alt="Playfair 1801 chart"
-       class="img-small75"
-       style="display: inline-block; width: 75%; height: auto;">
-      <figcaption class="is-size-6 has-text-grey">
-        Figure 1. Visual representation of the project’s workflow using the template bar.
-      </figcaption>
-    </figure>
+Data from the BLM Natl AIM Riparian and Wetland Indicators Hub (Bureau of Land
+Management, 2025) was analyzed to assess the ecological diversity and health of
+wetlands across the contiguous U.S. All processing and visualization, including bar charts,
+heatmaps, and interactive mapping, were conducted in Python. Shannon entropy (H = −Σ
+pᵢ ln pᵢ) and its exponential, the Hill number (eᴴ), were used to measure true diversity
+among wetland types. The average C value served as a biological indicator of wetland
+integrity, where higher values represent less-disturbed ecosystems. By combining these
+metrics with visualization, this study highlights regional disparities and supports
+data-driven conservation planning.      </p>
     <div class="content has-text-justified">
       <p>
         Curabitur suscipit urna ut felis vulputate, nec dictum orci vehicula. Mauris aliquet, nunc et dignissim tincidunt, urna est tempus lacus, ut suscipit ex tellus a ipsum. Donec pretium tempor justo vitae molestie. Fusce ullamcorper leo id purus sodales, at cursus felis lacinia. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
@@ -102,12 +104,26 @@ ecosystem resilience. </p>
 
 <section class="section">
 <div class="container is-max-desktop">
+      <h1 class="Result</h1>
+
+    <h2 class="subtitle is-5 has-text-centered has-text-grey">
+Hydrogeomorphic (HGM) Characteristics</h2>
+
   <div class="columns is-centered">
 
     <!-- Feature A -->
     <div class="column">
       <div class="content">
-        <h2 class="title is-3 has-text-centered">Feature A</h2>
+        <h2 class="title is-3 has-text-centered">HGM Classes by Wetland Type</h2>
+        <figure class="image has-text-centered" style="margin-top: 15px;">
+            <img src="./static/images/featureA.png"
+                 alt="Feature A illustration"
+                 style="max-width: 80%; height: auto; display: inline-block;">
+            <figcaption class="is-size-6 has-text-grey">
+              Figure A. Description of Feature A.
+            </figcaption>
+          </figure>
+
         <p>
           In this section, we introduce Feature A, a core component of the project that plays a pivotal role in achieving the overall goals. The importance of this feature stems from its ability to bridge critical gaps in existing workflows, deliver performance enhancements, and unlock new possibilities for visualization, analysis, or interactivity.
         </p>
