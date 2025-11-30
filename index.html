@@ -5,7 +5,7 @@
   <meta name="description" content="Lorem ipsum dolor sit amet, consectetur adipiscing elit.">
   <meta name="keywords" content="template, sample, html">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>U.S. Wetland Data Visualization</title>
+  <title>U.S. Wetland Data Visualization for the Bureau of Land Management’s Conservation Strategies</title>
 
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -15,42 +15,61 @@
   <link rel="icon" href="./static/images/favicon.png">
 
   <style>
-    html {
-      scroll-behavior: smooth;
+    /* 목차 스타일 */
+    #table-of-contents {
+      background-color: #f5f5f5;
+      padding: 15px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid #ddd;
     }
-    /* optional: 목차 스타일 */
-    nav#table-of-contents ul {
+    #table-of-contents ul {
       list-style: none;
-      padding-left: 0;
       display: flex;
       flex-wrap: wrap;
+      gap: 15px;
       justify-content: center;
-      gap: 20px;
-      margin-bottom: 30px;
+      margin: 0;
+      padding: 0;
     }
-    nav#table-of-contents a {
+    #table-of-contents a {
       text-decoration: none;
-      font-weight: bold;
       color: #3273dc;
+      font-weight: 600;
     }
-    nav#table-of-contents a:hover {
+    #table-of-contents a:hover {
       text-decoration: underline;
     }
   </style>
 </head>
 <body>
 
-<!-- 상단 Hero / Title Section -->
+<!-- 목차 -->
+<nav id="table-of-contents">
+  <ul>
+    <li><a href="#abstract">Abstract</a></li>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#methodology">Methodology</a></li>
+    <li><a href="#hgm">HGM Characteristics</a></li>
+    <li><a href="#vegetation">Vegetation & Biodiversity</a></li>
+    <li><a href="#spatial">Spatial Patterns</a></li>
+    <li><a href="#conclusion">Conclusion</a></li>
+    <li><a href="#future">Future Research</a></li>
+    <li><a href="#references">References</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- Hero / Title Section -->
 <section class="hero">
   <div class="hero-body">
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">
-            U.S. Wetland Data Visualization for the Bureau of Land Management’s Conservation Strategies
-          </h1>
+          <h1 class="title is-1 publication-title">U.S. Wetland Data Visualization for the Bureau of Land Management’s Conservation Strategies</h1>
           <div class="is-size-5 publication-authors">
-            <span class="author-block">Juhyun Lee<sup>1</sup> and</span>
+            <span class="author-block">Juhyun Lee<sup>1</sup> and </span>
             <span class="author-block">Jiwon Jung<sup>1</sup></span>
           </div>
           <div class="is-size-5 publication-authors">
@@ -62,119 +81,246 @@
   </div>
 </section>
 
-<!-- 페이지 내 목차 -->
-<nav id="table-of-contents">
-  <ul>
-    <li><a href="#abstract">Abstract</a></li>
-    <li><a href="#introduction">Introduction</a></li>
-    <li><a href="#methodology">Methodology</a></li>
-    <li><a href="#hgm">HGM Characteristics</a></li>
-    <li><a href="#vegetation">Vegetation Structure</a></li>
-    <li><a href="#spatial">Spatial Patterns</a></li>
-    <li><a href="#conclusion">Conclusion</a></li>
-    <li><a href="#future">Future Research</a></li>
-    <li><a href="#references">References</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-</nav>
-
-<!-- Abstract Section -->
-<section id="abstract" class="section">
+<!-- Abstract -->
+<section class="section" id="abstract">
   <div class="container is-max-desktop">
     <h2 class="title is-3 has-text-centered">Abstract</h2>
     <div class="content has-text-justified">
       <p>
-        This project provides a spatially explicit assessment of wetland integrity across Bureau of Land Management (BLM) lands in the United States, using ecological monitoring data from the BLM National AIM Riparian and Wetland Indicators Hub...
+This project provides a spatially explicit assessment of wetland integrity across Bureau of Land Management (BLM) lands in the United States, using ecological monitoring data from the BLM National AIM Riparian and Wetland Indicators Hub. Through Python-based processing, visualization, and interactive mapping, we analyzed biodiversity using Shannon entropy and Hill’s N1, and ecological condition using the Mean C value. Results reveal substantial regional disparities: Nevada, Idaho, and Utah contain the highest concentration of degraded wetlands (Hill’s N1 ≤ 8.0, C Value ≤ 3.0), largely driven by arid climates and land-use pressures. In contrast, Alaska and parts of the central U.S. show higher diversity and stronger ecological stability. Hydrogeomorphic (HGM) analyses highlight the dominance of Slope and Riverine wetlands across the West, while vegetation metrics show elevated non-native plant presence in disturbed regions. Collectively, these findings emphasize the need for region-specific conservation strategies, targeted restoration, and improved long-term monitoring. The study demonstrates how integrated ecological indicators and geospatial visualization can support data-driven decision-making for wetland conservation across federally managed landscapes.
+      </p>
+
+      <figure style="margin-bottom: 25px; text-align: center;">
+        <img src="blm.jpg" alt="BLM Wetlands Map" style="width:100%; height:auto;">
+        <figcaption class="is-size-6 has-text-grey" style="margin-top: 10px;">
+          Figure 1. Bureau of Land Management-managed public lands across the United States.
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- Introduction -->
+<section class="section" id="introduction">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Introduction</h2>
+    <div class="content has-text-justified">
+      <p>Wetlands play a vital role in maintaining ecological balance by supporting biodiversity, regulating hydrological cycles, and improving water quality. In the United States, many of these critical ecosystems are managed by the Bureau of Land Management (BLM), which oversees over 245 million acres of public lands across diverse landscapes (Figure 1). The BLM’s wetland and riparian monitoring programs, including the National AIM Riparian and Wetland Indicators Hub, are central to sustaining ecosystem health and ensuring that these lands continue to provide essential ecological services.
+      <br><br>
+        However, the condition and distribution of wetlands vary widely depending on geography, climate, and land-use pressures. While some states maintain abundant and diverse wetland systems, others face degradation due to aridity, water scarcity, or anthropogenic stress. These disparities present a growing challenge for federal land managers seeking to allocate conservation resources equitably across regions.
+      </p>
+
+      <figure class="image" style="margin: 25px 0;">
+        <img src="barchart_bystate.png" alt="BLM Wetlands Map" style="width:100%; height:auto;">
+        <figcaption class="is-size-6 has-text-grey" style="margin-top: 10px;">
+          Figure 2. Total number of BLM-managed wetlands across eight western U.S. states.
+        </figcaption>
+      </figure>
+
+      <p>This study analyzes BLM-managed wetlands across the western U.S. to identify areas needing greater conservation focus. Large regional disparities exist: Nevada holds the most wetlands, followed by California and Alaska, while Oregon has the fewest. These differences reflect climatic and geographic influences and highlight the need for region-specific conservation strategies to strengthen ecosystem resilience.</p>
+      <p>
+        Wetlands are essential for maintaining ecological balance by supporting biodiversity, regulating water cycles, and improving water quality. In the U.S., many are managed by the Bureau of Land Management (BLM), which oversees over 245 million acres of public lands (Fig. 1). The BLM’s wetland and riparian monitoring programs, such as the National AIM Riparian and Wetland Indicators Hub, play a key role in sustaining ecosystem health. However, wetland condition and distribution vary greatly by geography, climate, and land use. Some states maintain diverse systems, while others face degradation from aridity or human pressures, posing challenges for equitable conservation planning.
       </p>
     </div>
   </div>
 </section>
 
-<!-- Figure 1 -->
-<section class="section" id="figure1">
+<!-- Methodology -->
+<section class="section" id="methodology">
   <div class="container is-max-desktop">
-    <figure style="margin-bottom: 25px; text-align: center;">
-      <img src="blm.jpg" alt="BLM Wetlands Map" style="width:100%; height:auto;">
-      <figcaption class="is-size-6 has-text-grey" style="margin-top: 10px;">
-        Figure 1. Bureau of Land Management-managed public lands across the United States.
-      </figcaption>
-    </figure>
-  </div>
-</section>
-
-<!-- Introduction Section -->
-<section id="introduction" class="section">
-  <div class="container is-max-desktop">
-    <h2 class="title is-3 has-text-centered">Introduction</h2>
+    <h2 class="title is-3 has-text-centered">Methodology</h2>
+    <p>
+      Data from the BLM Natl AIM Riparian and Wetland Indicators Hub (Bureau of Land Management, 2025) was analyzed to assess the ecological diversity and health of wetlands across the contiguous U.S. All processing and visualization, including bar charts, heatmaps, and interactive mapping, were conducted in Python.
+      <br><br>
+      Shannon entropy (H = −Σ pᵢ ln pᵢ) and its exponential, the Hill number (eᴴ), were used to measure true diversity among wetland types. The average C value served as a biological indicator of wetland integrity, where higher values represent less-disturbed ecosystems.
+      <br><br>
+      By combining these metrics with visualization, this study highlights regional disparities and supports data-driven conservation planning.
+    </p>
     <div class="content has-text-justified">
-      <p>Wetlands are essential for maintaining ecological balance by supporting biodiversity...</p>
+      <p>
+        Curabitur suscipit urna ut felis vulputate, nec dictum orci vehicula. Mauris aliquet, nunc et dignissim tincidunt, urna est tempus lacus, ut suscipit ex tellus a ipsum. Donec pretium tempor justo vitae molestie. Fusce ullamcorper leo id purus sodales, at cursus felis lacinia. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+      </p>
     </div>
   </div>
 </section>
 
-<!-- Methodology Section -->
-<section id="methodology" class="section">
-  <div class="container is-max-desktop">
-    <h2 class="title is-3 has-text-centered">Methodology</h2>
-    <p>Data from the BLM Natl AIM Riparian and Wetland Indicators Hub...</p>
-  </div>
-</section>
-
-<!-- Hydrogeomorphic Section -->
-<section id="hgm" class="section">
+<!-- HGM Characteristics -->
+<section class="section" id="hgm">
   <div class="container is-max-desktop">
     <h2 class="title is-3 has-text-centered">Hydrogeomorphic (HGM) Characteristics</h2>
-    <!-- 내부 컨텐츠 생략 -->
+    <div class="columns is-centered">
+      <div class="column">
+        <div class="content">
+          <h2 class="subtitle is-4 has-text-centered">HGM Classes by Wetland Type</h2>
+          <figure class="image has-text-centered" style="margin-top: 15px;">
+            <img src="heatmap_HGM_by_WetlandType.png" alt="HGM by Wetland Type" style="max-width: 90%; height: auto; display: inline-block;">
+            <figcaption class="is-size-6 has-text-grey" style="margin-top: 10px;">
+              Figure 3. Heatmap illustrating how HGM classes vary across wetland types under BLM management.
+            </figcaption>
+          </figure>
+          <p>Figure 3 shows that Slope and Riverine wetlands dominate many western regions, indicating terrain-driven hydrology and strong surface flow influence. In contrast, Depression and Flat types are more common in lowland or coastal areas, reflecting greater water retention and limited drainage.</p>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="content">
+          <h2 class="subtitle is-4 has-text-centered">HGM Classes by State</h2>
+          <figure class="image has-text-centered" style="margin-top: 15px;">
+            <img src="heatmap_HGM_by_State.png" alt="HGM by State" style="max-width: 90%; height: auto; display: inline-block;">
+            <figcaption class="is-size-6 has-text-grey" style="margin-top: 10px;">
+              Figure 4. Heatmap showing differences in HGM class composition across BLM-managed states.
+            </figcaption>
+          </figure>
+          <p>Figure 4 highlights how HGM composition varies across states. Nevada, Utah, and Wyoming exhibit simpler, arid-adapted structures, while Oregon and Colorado show more balanced and diverse class distributions. These differences reflect how geomorphology and hydrology shape ecosystem function across landscapes.</p>
+        </div>
+      </div>
+    </div>
+    <p>Together, Figure 3 and 4 demonstrate that wetland geomorphology—and thus ecological function—differs significantly across regions. As a result, management and restoration strategies must be tailored to the hydrological regime and landscape characteristics of each state or wetland type.</p>
   </div>
 </section>
 
-<!-- Vegetation Section -->
-<section id="vegetation" class="section">
+<!-- Vegetation -->
+<section class="section" id="vegetation">
   <div class="container is-max-desktop">
     <h2 class="title is-3 has-text-centered">Vegetation Structure and Biodiversity Patterns</h2>
-    <!-- 내부 컨텐츠 생략 -->
+    <!-- Figure 5 -->
+    <figure class="image has-text-centered" style="margin-top: 15px;">
+      <img src="native_nonnative_state.png" alt="Native vs Non-native Vegetation" style="max-width: 90%; height: auto; display: inline-block;">
+      <figcaption class="is-size-6 has-text-grey" style="margin-top: 10px;">
+        Figure 5. Proportion of native vs. non-native vegetation across BLM-managed states.
+      </figcaption>
+    </figure>
+    <p>Figure 5 illustrates how vegetation composition varies across BLM-managed states. Oregon and Utah show notably higher proportions of non-native vegetation, suggesting stronger ecological disturbance and reduced habitat stability. In contrast, states such as Alaska and Wyoming are dominated by native vegetation, indicating more intact wetland ecosystems with lower levels of biological disruption.</p>
+
+    <!-- Figure 6 -->
+    <figure class="image has-text-centered" style="margin-top: 15px;">
+      <img src="diversity_hexbin_n1_vs_cvalue.png" alt="Hill's N1 vs C Value" style="max-width: 90%; height: auto; display: inline-block;">
+      <figcaption class="is-size-6 has-text-grey" style="margin-top: 10px;">
+        Figure 6. Relationship between Hill’s N1 diversity index and average C value across wetlands.
+      </figcaption>
+    </figure>
+    <p>
+      Figure 6 shows a strong positive relationship between Hill’s N1 (species diversity) and the average C value (ecological integrity). Wetlands with higher species diversity tend to exhibit healthier ecological conditions, while degraded, low-diversity systems cluster in states such as Nevada, Idaho, and Utah, where arid environments and land-use pressures are more intense.
+      <br><br>
+      Together, Figure 5 and 6 demonstrate that declines in biodiversity and increases in non-native vegetation frequently occur in the same regions. These patterns highlight the importance of targeted restoration efforts and adaptive vegetation management to maintain ecological resilience across western U.S. wetlands.
+    </p>
   </div>
 </section>
 
-<!-- Spatial Patterns Section -->
-<section id="spatial" class="section">
+<!-- Spatial Patterns -->
+<section class="section" id="spatial">
   <div class="container is-max-desktop">
     <h2 class="title is-3 has-text-centered">Spatial Patterns of Wetland Condition</h2>
-    <!-- 내부 컨텐츠 생략 -->
+
+    <figure class="image has-text-centered" style="margin-top: 15px;">
+      <a href="https://blmwetlandmap2.netlify.app/" target="_blank">
+        <img src="blm_map.png" alt="Interactive BLM Map" style="max-width: 90%; height: auto; display: inline-block;">
+      </a>
+      <figcaption class="is-size-6 has-text-grey" style="margin-top: 10px;">
+        Figure 7. Interactive map of BLM-managed wetlands. Click the thumbnail to open the full interactive map.
+      </figcaption>
+    </figure>
+
+    <p>Figure 7 illustrates spatial patterns of wetland condition across BLM-managed sites using an interactive map. Each point represents a monitored wetland, with circle size proportional to Hill’s N1 and color indicating the average C value. Low-integrity clusters appear in Nevada and Idaho, while Alaska and Wyoming host healthier systems.</p>
+
+    <!-- Figure 8 -->
+    <figure class="image has-text-centered" style="margin-top: 15px;">
+      <img src="low-quality-wetlands.png" alt="Low-quality wetlands" style="max-width: 90%; height: auto; display: inline-block;">
+      <figcaption class="is-size-6 has-text-grey" style="margin-top: 10px;">
+        Figure 8. Spatial distribution of low-quality wetlands (Hill’s N1 ≤ 8.0 & C value ≤ 3.0).
+      </figcaption>
+    </figure>
+    <p>Figure 8 shows that low-quality wetlands are most concentrated in Nevada, Idaho, and California due to aridity and land-use pressure. In contrast, Alaska and Wyoming feature relatively few low-quality sites, reflecting more resilient ecological systems.<br><br>Together, Figures 7 and 8 highlight stark regional disparities and demonstrate the importance of spatial visualization in supporting targeted restoration planning.</p>
   </div>
 </section>
 
-<!-- Conclusion Section -->
-<section id="conclusion" class="section">
+<!-- Conclusion -->
+<section class="section" id="conclusion">
   <div class="container is-max-desktop">
     <h2 class="title is-3 has-text-centered">Conclusion</h2>
-    <!-- 내부 컨텐츠 생략 -->
+    <div class="content has-text-justified">
+      <p>
+        The analysis demonstrates clear ecological heterogeneity among wetlands managed by the Bureau of Land Management (BLM), revealing both regional strengths and areas of concern. Across 875 evaluated sites, 254 were classified as degraded (Hill’s N1 ≤ 8.0, C Value ≤ 3.0), primarily concentrated in Nevada, Idaho, and Utah, where arid climates and land-use intensity constrain ecological recovery and reduce native vegetation.
+        <br><br>
+        In contrast, Alaska and parts of the central U.S. show higher Mean C Values and more balanced wetland compositions, indicating stronger ecological stability and lower human disturbance. The HGM analysis revealed dominance of Slope and Riverine wetlands, underscoring the importance of hydrologic connectivity while also highlighting vulnerability to drought and flow alteration in western regions.
+        <br><br>
+        Vegetation composition further showed elevated proportions of non-native species in Vernal Pools and Riparian Forests or Woodlands, signaling long-term disturbance from agriculture and grazing. Spatially, interactive mapping and heatmap results identified clusters of low-diversity, low-integrity wetlands in southern Nevada and central Idaho, contrasting with resilient systems in Alaska and Wyoming.
+        <br><br>
+        Overall, these results call for targeted conservation, adaptive restoration, and sustained monitoring, particularly in Nevada, Idaho, and Utah. Meanwhile, Alaska’s wetlands, though relatively stable, remain under-monitored, requiring continued assessment to ensure resilience under changing climate conditions.
+      </p>
+    </div>
   </div>
 </section>
 
-<!-- Future Research Section -->
-<section id="future" class="section">
+<!-- Future Research -->
+<section class="section" id="future">
   <div class="container is-max-desktop">
     <h2 class="title is-3 has-text-centered">Future Research</h2>
-    <!-- 내부 컨텐츠 생략 -->
+    <div class="content has-text-justified">
+      <p>
+        This study provides a spatially explicit understanding of wetland integrity across BLM-managed lands, but several limitations suggest clear directions for future research. The analysis relied primarily on AIM monitoring data, which may not capture temporal or seasonal variation in biodiversity and hydrology. Future studies should integrate multi-year datasets and remote sensing indicators such as NDVI, soil moisture, and evapotranspiration to identify longer-term ecological trends.
+        <br><br>
+        The current framework emphasized biological integrity (C Value) and species diversity (Hill’s N1), but did not fully account for abiotic stressors such as water chemistry, nutrient loading, and land-use intensity. Incorporating these variables would strengthen predictive modeling and improve early detection of ecological degradation. Additionally, applying spatial regression or machine learning approaches may help uncover causal drivers of wetland decline and reveal thresholds of ecological resilience. 
+        <br><br> 
+        Advancing this research will also require interdisciplinary collaboration. Partnerships with hydrologists, climate scientists, and local conservation agencies can enhance modeling accuracy and policy relevance, while engagement with tribal land managers and citizen scientists could expand monitoring coverage and improve dataset richness.
+        <br><br>
+Finally, this framework could be extended to other ecosystems—such as grasslands, riparian corridors, and arid landscapes—to support broader climate-resilient land management initiatives and inform national-scale conservation planning.      </p>
+    </div>
   </div>
 </section>
 
-<!-- References Section -->
-<section id="references" class="section">
+<!-- References & Data Sources -->
+<section class="section" id="references">
   <div class="container is-max-desktop">
     <h2 class="title is-3 has-text-centered">References & Data Sources</h2>
-    <!-- 내부 컨텐츠 생략 -->
+    <div class="content">
+      <p>
+        <strong>Figure 1 Source</strong>: <a href="https://www.blm.gov/about/our-mission" target="_blank">Bureau of Land Management – Our Mission</a>
+        <br><br>
+        <strong>Data Source</strong>: Bureau of Land Management, AIM Riparian & Wetland Indicators Hub (2025). Available at: 
+          <a href="https://catalog.data.gov/dataset/blm-natl-aim-riparian-and-wetland-indicators-hub-277f0" target="_blank">
+    https://catalog.data.gov/dataset/blm-natl-aim-riparian-and-wetland-indicators-hub-277f0
+  </a>        
+        <br><br>
+        <strong>Tools Used</strong>: Python (pandas, numpy, folium, matplotlib, geopandas)
+      </p>
+    </div>
   </div>
 </section>
 
-<!-- Contact Section -->
-<section id="contact" class="section">
+<!-- Contact Information -->
+<section class="section" id="contact">
   <div class="container is-max-desktop">
     <h2 class="title is-3 has-text-centered">Contact Information</h2>
-    <!-- 내부 컨텐츠 생략 -->
+    <div class="content" style="margin-top: 30px;">
+      <p class="is-size-6"><strong>Juhyun Lee</strong></p>
+      <p><span class="icon"><i class="fas fa-envelope"></i></span> <a href="mailto:jlee400@gmu.edu">jlee400@gmu.edu</a></p>
+      <p><span class="icon"><i class="fab fa-linkedin"></i></span> <a href="https://www.linkedin.com/in/juhyunnikkilee" target="_blank">www.linkedin.com/in/juhyunnikkilee</a></p>
+      <br>
+      <p class="is-size-6"><strong>Jiwon Jung</strong></p>
+      <p><span class="icon"><i class="fas fa-envelope"></i></span> <a href="mailto:jjung44@gmu.edu">jjung44@gmu.edu</a></p>
+      <p><span class="icon"><i class="fab fa-linkedin"></i></span> <a href="https://www.linkedin.com/in/jiwon-jung-649096350/" target="_blank">www.linkedin.com/in/jiwon-jung-649096350/</a></p>
+      <br>
+      <p class="is-size-6"><strong>Department of Computational and Data Sciences</strong></p>
+      <p>George Mason University Korea</p>
+    </div>
   </div>
 </section>
+
+<!-- Footer -->
+<footer class="footer footer-compact custom-footer">
+  <div class="content has-text-centered">
+    <p>
+      This website was created as coursework for <strong>CDS 301 / 501: Scientific Information and Data Visualization (Fall 2025) at George Mason Korea</strong>.
+    </p>
+    <p>
+      This website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+    </p>
+    <p>
+      Template design is based on the example site available at <a href="https://utkuozbulak.github.io/cds_301_template_website/" target="_blank" rel="noopener">CDS 301 Template Website</a>, which itself uses a layout from the <a href="https://github.com/nerfies/nerfies.github.io" target="_blank" rel="noopener">Nerfies project site</a>.
+    </p>
+  </div>
+</footer>
 
 </body>
 </html>
